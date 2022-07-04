@@ -22,12 +22,22 @@ function startGame()
         document.getElementById("GameArea-GX").appendChild(this.canvas);
         this.frameNo = 0;
         this.interval = setInterval(updateGlidingXero, 20);
-        window.addEventListener('keydown', function (e) {
+        window.addEventListener('keydown', function (e) 
+        {
             move(-0.2);
-          })
-          window.addEventListener('keyup', function (e) {
+        })
+        window.addEventListener('keyup', function (e) 
+        {
             clearmove(0.05);
-          })
+        })
+        window.addEventListener('touchstart', function (e) 
+        {
+            move(-0.2);
+        })
+        window.addEventListener('touchend', function (e) 
+        {
+            clearmove(0.05);
+        })
     },
     clear : function() 
     {
